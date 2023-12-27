@@ -256,6 +256,8 @@ screwTables = {
     "DIN471": ("RetainingRing", "makeExternalRetainingRing"),
     "DIN472": ("RetainingRing", "makeInternalRetainingRing"),
     "DIN6799": ("RetainingRing", "makeEClip"),
+    "ISO2338": ("Pin", "makePin"),
+    "ISO2339": ("Pin", "makePin"),
     # * diam pos and K pos were moved from this table to the csv titles
 }
 FSAppendAliasesToTable(screwTables)
@@ -454,7 +456,7 @@ class FSScrewMaker(Screw):
         if name not in titles:
             return -1
         return titles.index(name)
-    
+
     def GetTableProperty(self, type, diam, property, default_val):
         tablepos = self.GetTablePos(type, property)
         FreeCAD.Console.PrintLog("Found pos for " + property + ": " + str(tablepos) + "\n")

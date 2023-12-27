@@ -52,6 +52,7 @@ translate("FastenerCmdTreeView", "ScrewDie")
 translate("FastenerCmdTreeView", "Insert")
 translate("FastenerCmdTreeView", "RetainingRing")
 translate("FastenerCmdTreeView", "T-Slot")
+translate("FastenerCmdTreeView", "Pin")
 
 ScrewParameters = {"type", "diameter",
                    "matchOuter", "thread", "leftHanded", "length"}
@@ -75,6 +76,7 @@ TSlotNutParameters = { "type", "diameter", "matchOuter",
                         "thread", "leftHanded", "slotWidth" }
 TSlotBoltParameters = { "type", "diameter", "length", "lengthCustom",
                        "matchOuter", "thread", "leftHanded", "slotWidth" }
+PinParameters = {"type", "diameter", "length", "lengthCustom", "matchOuter"}
 # this is a list of all possible fastener attribs
 FastenerAttribs = ['type', 'diameter', 'thread', 'leftHanded', 'matchOuter', 'length', 'lengthCustom', 'width',
                    'diameterCustom', 'pitchCustom', 'tcode', 'blind', 'screwLength', "slotWidth", 'externalDiam']
@@ -93,6 +95,7 @@ ThreadedRodGroup = translate("FastenerCmd", "ThreadedRod")
 InsertGroup = translate("FastenerCmd", "Inserts")
 RetainingRingGroup = translate("FastenerCmd", "Retaining Rings")
 TSlotGroup = translate("FastenerCmd", "T-Slot Fasteners")
+PinGroup = translate("FastenersCmd", "Pins")
 
 CMD_HELP = 0
 CMD_GROUP = 1
@@ -251,6 +254,9 @@ FSScrewCommandTable = {
     "DIN471": (translate("FastenerCmd", "Metric external retaining rings"), RetainingRingGroup, RetainingRingParameters, "DIN"),
     "DIN472": (translate("FastenerCmd", "Metric internal retaining rings"), RetainingRingGroup, RetainingRingParameters, "DIN"),
     "DIN6799": (translate("FastenerCmd", "Metric E-clip retaining rings"), RetainingRingGroup, RetainingRingParameters, "DIN"),
+
+    "ISO2338": (translate("FastenerCmd", "Plain parallel pins"), PinGroup, PinParameters, "ISO"),
+    "ISO2339": (translate("FastenerCmd", "Plain taper pins"), PinGroup, PinParameters, "ISO"),
 }
 
 def GetParams(type):
@@ -765,5 +771,6 @@ FastenerBase.FSAddFastenerType("Stud")
 FastenerBase.FSAddFastenerType("HeatSet", False)
 FastenerBase.FSAddFastenerType("RetainingRing", False)
 FastenerBase.FSAddFastenerType("T-Slot", False)
+FastenerBase.FSAddFastenerType("Pin", False)
 for item in ScrewMaker.screwTables:
     FastenerBase.FSAddItemsToType(ScrewMaker.screwTables[item][0], item)
