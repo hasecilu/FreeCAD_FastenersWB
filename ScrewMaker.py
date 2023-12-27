@@ -258,6 +258,9 @@ screwTables = {
     "DIN6799": ("RetainingRing", "makeEClip"),
     "ISO2338": ("Pin", "makePin"),
     "ISO2339": ("Pin", "makePin"),
+    "ISO2340": ("Pin", "makePin"),
+    "ISO2341-A": ("Pin", "makePin"),
+    "ISO2341-B": ("Pin", "makePin"),
     # * diam pos and K pos were moved from this table to the csv titles
 }
 FSAppendAliasesToTable(screwTables)

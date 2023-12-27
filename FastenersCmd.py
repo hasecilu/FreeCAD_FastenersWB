@@ -257,6 +257,9 @@ FSScrewCommandTable = {
 
     "ISO2338": (translate("FastenerCmd", "Plain parallel pins"), PinGroup, PinParameters, "ISO"),
     "ISO2339": (translate("FastenerCmd", "Plain taper pins"), PinGroup, PinParameters, "ISO"),
+    "ISO2340": (translate("FastenerCmd", "Clevis pins without head"), PinGroup, PinParameters, "ISO"),
+    "ISO2341-A": (translate("FastenerCmd", "Clevis pins with head"), PinGroup, PinParameters, "ISO"),
+    "ISO2341-B": (translate("FastenerCmd", "Clevis pins with head"), PinGroup, PinParameters, "ISO"),
 }
 
 def GetParams(type):
